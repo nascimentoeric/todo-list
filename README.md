@@ -12,9 +12,9 @@ Executando com VS Code:
 
  - Caso esteja utilizando o Visual Studio Code, também é possível executar o projeto utilizando a extensão Live Server:
 
-1.Abra a pasta do projeto no VS Code;
-2.Instale a extensão Live Server;
-3.Clique com o botão direito no arquivo index.html;
-4.Selecione "Open with Live Server".
+- 1.Abra a pasta do projeto no VS Code;
+- 2.Instale a extensão Live Server;
+- 3.Clique com o botão direito no arquivo index.html;
+- 4.Selecione "Open with Live Server".
 
 O projeto será aberto automaticamente no navegador.

@@ -2,13 +2,13 @@
 TODO List feita em JavaScript puro como parte de um desafio para o processo seletivo de uma vaga frontend para a empresa TOTVS
 
 Executando o projeto:
-- 1. Clone o repositório:
+- Clone o repositório:
 git clone https://github.com/nascimentoeric/todo-list.git
-- 2. Entre na pasta do projeto:
+- Entre na pasta do projeto:
 cd todo-list
-- 3. Abra o arquivo index.html no navegador.
+- Abra o arquivo index.html no navegador.
 
-- Executando com VS Code
+Executando com VS Code:
 
  - Caso esteja utilizando o Visual Studio Code, também é possível executar o projeto utilizando a extensão Live Server:
 

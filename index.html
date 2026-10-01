@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TODO List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="todo-container">
+
+        <h1>TODO List</h1>
+
+        <div class="todo-content">
+
+            <section class="task-list">
+
+                <h2>Nova tarefa</h2>
+
+                <form id="task-form">
+
+                    <label for="task-title">Título</label>
+                    <input 
+                        type="text" 
+                        id="task-title"
+                        placeholder="Digite o título da tarefa"
+                    >
+
+                    <label for="task-description">Descrição</label>
+                    <textarea
+                        id="task-description"
+                        placeholder="Digite uma descrição"
+                    ></textarea>
+
+                    <button type="submit">
+                        Adicionar tarefa
+                    </button>
+
+                </form>
+
+                <h2 class="list-title">Tarefas</h2>
+
+                <div class="tasks">
+                </div>
+
+            </section>
+
+
+            <section class="task-details">
+
+                <h2>Detalhes</h2>
+
+                <div class="details-content">
+                    <p>Selecione uma tarefa para visualizar seus detalhes.</p>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

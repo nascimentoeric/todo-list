@@ -25,16 +25,20 @@
                 <form id="task-form">
 
                     <label for="task-title">Título</label>
-                    <input 
-                        type="text" 
+
+                    <input
+                        type="text"
                         id="task-title"
                         placeholder="Digite o título da tarefa"
+                        required
                     >
 
                     <label for="task-description">Descrição</label>
+
                     <textarea
                         id="task-description"
                         placeholder="Digite uma descrição"
+                        required
                     ></textarea>
 
                     <button type="submit">
@@ -45,11 +49,9 @@
 
                 <h2 class="list-title">Tarefas</h2>
 
-                <div class="tasks">
-                </div>
+                <div class="tasks"></div>
 
             </section>
-
 
             <section class="task-details">
 
@@ -65,8 +67,9 @@
 
     </main>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 
 </body>
 
 </html>
+

@@ -10,7 +10,7 @@ cd todo-list
 
 Executando com VS Code:
 
- - Caso esteja utilizando o Visual Studio Code, também é possível executar o projeto utilizando a extensão Live Server:
+ - Caso esteja utilizando o Visual Studio Code, também é possível executar o projeto utilizando a extensão Live Server
 
 - 1.Abra a pasta do projeto no VS Code;
 - 2.Instale a extensão Live Server;

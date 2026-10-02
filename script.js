@@ -1,4 +1,5 @@
 import "./components/todo-task.js";
+import "./components/task-details.js";
 
 
 const tasks = [];
@@ -8,7 +9,7 @@ const titleInput = document.getElementById("task-title");
 const descriptionInput = document.getElementById("task-description");
 
 const taskList = document.querySelector(".tasks");
-const detailsContent = document.querySelector(".details-content");
+const details = document.querySelector("task-details");
 
 
 form.addEventListener("submit", function (event) {
@@ -16,6 +17,7 @@ form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const task = {
+        id: crypto.randomUUID(),
         title: titleInput.value,
         description: descriptionInput.value,
         completed: false
@@ -23,12 +25,16 @@ form.addEventListener("submit", function (event) {
 
     tasks.push(task);
 
+
     const taskElement = document.createElement("todo-task");
 
+    taskElement.setAttribute("task-id", task.id);
     taskElement.setAttribute("title", task.title);
     taskElement.setAttribute("description", task.description);
 
+
     taskList.appendChild(taskElement);
+
 
     form.reset();
 
@@ -37,68 +43,41 @@ form.addEventListener("submit", function (event) {
 
 taskList.addEventListener("task-selected", function (event) {
 
-    const task = event.detail;
+    const task = tasks.find(function (task) {
+        return task.id === event.detail.id;
+    });
 
-    showTaskDetails(task);
+    if (task) {
+        details.showTask(task);
+    }
 
 });
 
 
-function showTaskDetails(task) {
+details.addEventListener("task-deleted", function (event) {
 
-    detailsContent.innerHTML = "";
-
-    const title = document.createElement("h3");
-
-    title.textContent = task.title;
-    title.classList.add("detail-title");
+    const taskId = event.detail.id;
 
 
-    const description = document.createElement("p");
-
-    description.textContent = task.description;
-    description.classList.add("detail-description");
-
-
-    const deleteButton = document.createElement("button");
-
-    deleteButton.textContent = "Excluir tarefa";
-    deleteButton.classList.add("delete-button");
-
-
-    detailsContent.appendChild(title);
-    detailsContent.appendChild(description);
-    detailsContent.appendChild(deleteButton);
-
-
-    deleteButton.addEventListener("click", function () {
-
-        const taskIndex = tasks.findIndex(
-            item => item.title === task.title &&
-                item.description === task.description
-        );
-
-        if (taskIndex !== -1) {
-            tasks.splice(taskIndex, 1);
-        }
-
-        const taskElements = document.querySelectorAll("todo-task");
-
-        taskElements.forEach(function (element) {
-
-            if (
-                element.getAttribute("title") === task.title &&
-                element.getAttribute("description") === task.description
-            ) {
-                element.remove();
-            }
-
-        });
-
-        detailsContent.innerHTML = `
-            <p>Selecione uma tarefa para visualizar seus detalhes.</p>
-        `;
-
+    const taskIndex = tasks.findIndex(function (task) {
+        return task.id === taskId;
     });
 
-}
+
+    if (taskIndex !== -1) {
+        tasks.splice(taskIndex, 1);
+    }
+
+
+    const taskElement =
+        document.querySelector(`todo-task[task-id="${taskId}"]`);
+
+
+    if (taskElement) {
+        taskElement.remove();
+    }
+
+
+    details.clear();
+
+});

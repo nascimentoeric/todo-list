@@ -7,6 +7,7 @@ class TodoTask extends HTMLElement {
     }
 
     connectedCallback() {
+
         const title = this.getAttribute("title");
         const description = this.getAttribute("description");
 
@@ -35,7 +36,10 @@ class TodoTask extends HTMLElement {
             </div>
         `;
 
-        const taskElement = this.shadowRoot.querySelector(".task-item");
+
+        const taskElement =
+            this.shadowRoot.querySelector(".task-item");
+
 
         taskElement.addEventListener("click", () => {
 
@@ -43,7 +47,9 @@ class TodoTask extends HTMLElement {
                 new CustomEvent("task-selected", {
                     bubbles: true,
                     composed: true,
+
                     detail: {
+                        id: this.getAttribute("task-id"),
                         title: title,
                         description: description
                     }
@@ -51,8 +57,9 @@ class TodoTask extends HTMLElement {
             );
 
         });
+
     }
 }
 
-customElements.define("todo-task", TodoTask);
 
+customElements.define("todo-task", TodoTask);

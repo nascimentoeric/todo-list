@@ -24,22 +24,17 @@
 
                 <form id="task-form">
 
-                    <label for="task-title">Título</label>
+                    <label for="task-title">
+                        Título
+                    </label>
 
-                    <input
-                        type="text"
-                        id="task-title"
-                        placeholder="Digite o título da tarefa"
-                        required
-                    >
+                    <input type="text" id="task-title" placeholder="Digite o título da tarefa" required>
 
-                    <label for="task-description">Descrição</label>
+                    <label for="task-description">
+                        Descrição
+                    </label>
 
-                    <textarea
-                        id="task-description"
-                        placeholder="Digite uma descrição"
-                        required
-                    ></textarea>
+                    <textarea id="task-description" placeholder="Digite uma descrição" required></textarea>
 
                     <button type="submit">
                         Adicionar tarefa
@@ -47,19 +42,23 @@
 
                 </form>
 
-                <h2 class="list-title">Tarefas</h2>
+                <h2 class="list-title">
+                    Tarefas
+                </h2>
 
-                <div class="tasks"></div>
+                <div class="tasks">
+                </div>
 
             </section>
 
+
             <section class="task-details">
 
-                <h2>Detalhes</h2>
+                <h2>
+                    Detalhes
+                </h2>
 
-                <div class="details-content">
-                    <p>Selecione uma tarefa para visualizar seus detalhes.</p>
-                </div>
+                <task-details></task-details>
 
             </section>
 
@@ -67,9 +66,10 @@
 
     </main>
 
-    <script type="module" src="script.js"></script>
+
+    <script type="module" src="script.js">
+    </script>
 
 </body>
 
 </html>
-
